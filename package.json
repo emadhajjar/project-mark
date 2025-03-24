@@ -1,0 +1,41 @@
+{
+  "name": "project-mark",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "repository": "git@github.com:emadhajjar/project-mark.git",
+  "author": "Emad Hajjar <emadaldeen.hajjar@gmail.com>",
+  "scripts": {
+    "prepare": "husky",
+    "format:lint": "eslint --fix",
+    "format:prettier": "prettier './**/*' --write --ignore-unknown",
+    "format": "concurrently -m 1 'yarn:format:*'",
+    "lint": "yarn workspace @project-mark/lint",
+    "ts": "yarn workspace @project-mark/ts",
+    "web": "yarn workspace @project-mark/web",
+    "start:web": "yarn web start",
+    "start": "concurrently 'yarn:start:*'"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@project-mark/lint": "*",
+    "@project-mark/ts": "*",
+    "concurrently": "^9.1.2",
+    "dotenv-cli": "^8.0.0",
+    "husky": "^9.1.7",
+    "rimraf": "^6.0.1"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "volta": {
+    "node": "22.14.0",
+    "yarn": "1.22.22"
+  }
+}

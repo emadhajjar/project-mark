@@ -1,0 +1,10 @@
+.DS_STORE
+.idea/
+.vinxi
+database.sqlite3
+dist/
+node_modules/
+tsconfig.tsbuildinfo
+yarn-error.log
+
+delme/
